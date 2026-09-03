@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>EduMentor AI - Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <nav>
+
+        <h2>EduMentor AI</h2>
+
+        <a href="/logout">Logout</a>
+
+    </nav>
+
+
+    <main>
+
+        <h1>Welcome, {{ name }} 👋</h1>
+
+        <p class="subtitle">
+            Your personalized learning dashboard
+        </p>
+
+
+        <!-- PERFORMANCE CARDS -->
+
+        <div class="cards">
+
+            <div class="dashboard-card">
+
+                <h3>Overall Performance</h3>
+
+                <div class="score">
+                    {{ overall_performance }}%
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <h3>Weak Topic</h3>
+
+                <div class="weak">
+                    {{ weak_topic }}
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <h3>Recent Quiz</h3>
+
+                <div class="score">
+                    {{ recent_quiz }}%
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUIZ SECTION -->
+
+        <div class="quiz-section">
+
+            <h2>Test Your Knowledge 🧠</h2>
+
+            <p>
+                Take a quiz to check your understanding
+                and improve your performance.
+            </p>
+
+            <a href="/quiz">
+                <button type="button">
+                    Take Quiz
+                </button>
+            </a>
+
+        </div>
+
+
+        <!-- RECOMMENDATION -->
+
+        <div class="recommendation">
+
+            <h2>Recommended for You</h2>
+
+            <div class="resource">
+
+                <h3>
+                    {{ weak_topic }}
+                </h3>
+
+                <p>
+                    Learning material for your weak topic.
+                </p>
+
+                <button type="button">
+                    View Resource
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- WHY RECOMMENDATION -->
+
+        <div class="why">
+
+            <h2>Why this recommendation?</h2>
+
+            <p>
+                Your performance in {{ weak_topic }}
+                needs improvement.
+            </p>
+
+        </div>
+
+
+    </main>
+
+</div>
+
+</body>
+
+</html>
